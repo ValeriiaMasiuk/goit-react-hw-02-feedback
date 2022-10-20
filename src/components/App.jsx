@@ -1,10 +1,10 @@
-import React from 'react';
+import { React, Component } from 'react';
 import Statistics from './Feedbacks/Statistics/Statistics';
 import FeedbackOptions from './Feedbacks/Controls/Controls';
 import Section from './Feedbacks/Section/Section';
 import NotificationMessage from './Feedbacks/NotificationMessage/NotificationMessage'
 
-class App extends React.Component {
+class App extends Component {
       state = {
         good: 0,
         neutral: 0,
@@ -41,45 +41,34 @@ class App extends React.Component {
           <div
             style={{
               height: '100vh',
-              display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               fontSize: 40,
               color: '#010101'
             }}>
             <Section title="Please, leave your feedback">
-                <FeedbackOptions
-                    options={options}
-                    onLeaveFeedback={this.onLeaveFeedback}
-                />
+              <FeedbackOptions
+                options={options}
+                onLeaveFeedback={this.onLeaveFeedback}
+              />
             </Section>
 
             <Section title="Statistics">
-              {total !== 0 ? 
+              {total !== 0
+                ? 
               <Statistics
-                    good={this.state.good}
-                    neutral={this.state.neutral}
-                    bad={this.state.bad}
-                    total={total}
-                  positivePercentage={percent} />
+                good={this.state.good}
+                neutral={this.state.neutral}
+                bad={this.state.bad}
+                total={total}
+                positivePercentage={percent} />
                 : 
-                <NotificationMessage
-                  message="There is no feedback"/>}
-                
-                </Section>
+              <NotificationMessage
+                message="There is no feedback"/>} 
+              </Section>
             </div>
         )
     }
 };
 
-
 export default App
-
-// Созданы репозитории goit-react-hw-02-feedback и goit-react-hw-02-phonebook.
-// При сдаче домашней работы есть две ссылки: на исходные файлы и рабочие страницы каждого задания на GitHub Pages.
-// При запуске кода задания, в консоли нету ошибок и предупреждений.
-// Для каждого компонента есть отдельный файл в папке src/components.
-// Для компонентов описаны propTypes.
-// Все что компонент ожидает в виде пропсов, передается ему при вызове.
-// JS-код чистый и понятный, используется Prettier.
-// Стилизация выполнена CSS-модулями или Styled Components.

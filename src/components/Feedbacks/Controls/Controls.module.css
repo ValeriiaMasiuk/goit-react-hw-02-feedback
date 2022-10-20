@@ -1,0 +1,17 @@
+.buttonList {
+    display: inline-flex;
+    min-width: 100px;
+    justify-content: space-evenly;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px;
+    min-width: 65px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: grey;
+}
