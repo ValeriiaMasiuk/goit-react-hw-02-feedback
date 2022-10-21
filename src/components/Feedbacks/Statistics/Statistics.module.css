@@ -8,3 +8,23 @@
     font-size: 36px;
     padding-left: 0;
 }
+
+.listItem:nth-child(1) {
+    color: green;
+}
+
+.listItem:nth-child(2) {
+    color: rgb(175, 164, 59);
+}
+
+.listItem:nth-child(3) {
+    color: red;
+}
+
+.listItem:nth-child(4) {
+    color: blue;
+}
+
+.listItem:nth-child(5) {
+    color: rgb(26, 206, 26);
+}
